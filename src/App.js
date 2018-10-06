@@ -2,8 +2,13 @@ import React from 'react'
 import { ReactComponent as SearchIcon } from './search-icon.svg'
 import './App.scss'
 
+import { Helmet } from 'react-helmet'
+
 export default () => (
   <main className="container">
+    <Helmet>
+      <title>Home - Our good friend</title>
+    </Helmet>
     <header className="py-3">
       <div className="row flex-nowrap justify-content-between align-items-center">
         <div className="col-4 pt-1">
