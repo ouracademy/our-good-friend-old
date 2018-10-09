@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet'
 import { Link, Route, BrowserRouter } from 'react-router-dom'
 import SignUp from './SignUp'
 import Home from './Home'
+import Button from './Button'
 
 const Layout = () => (
   <main className="container">
@@ -31,17 +32,17 @@ const Layout = () => (
           <a className="text-muted" href="/">
             <SearchIcon />
           </a>
-          <Link className="btn btn-md btn-outline-secondary" to="/sign-up">
+          <Button size="md" outline color="secondary" tag={Link} to="/sign-up">
             Registrate
-          </Link>
-          <a className="btn btn-md btn-outline-secondary" href="/">
+          </Button>
+          <Button size="md" outline color="secondary" tag={Link} to="/">
             Iniciar sesión
-          </a>
+          </Button>
         </div>
       </div>
     </header>
 
-    <Route path="/" component={Home} exact={true} />
+    <Route path="/" component={Home} exact />
     <Route path="/sign-up" component={SignUp} />
 
     <footer>
