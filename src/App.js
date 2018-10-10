@@ -3,10 +3,11 @@ import { ReactComponent as SearchIcon } from './search-icon.svg'
 import './App.scss'
 
 import { Helmet } from 'react-helmet'
-import { Link, Route, BrowserRouter } from 'react-router-dom'
+import { Link, Route, BrowserRouter, Switch } from 'react-router-dom'
 import SignUp from './SignUp'
 import Home from './Home'
 import Button from './Button'
+import NotFound from './NotFound'
 
 const Layout = () => (
   <main className="container">
@@ -42,8 +43,11 @@ const Layout = () => (
       </div>
     </header>
 
-    <Route path="/" component={Home} exact />
-    <Route path="/sign-up" component={SignUp} />
+    <Switch>
+      <Route path="/" component={Home} exact />
+      <Route path="/sign-up" component={SignUp} />
+      <Route component={NotFound} />
+    </Switch>
 
     <footer>
       <p>© 2018 OurGoodFriend, Inc.</p>
